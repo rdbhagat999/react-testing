@@ -1,7 +1,12 @@
+import { useState } from 'react'
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const [btnColor, setBtnColor] = useState('red');
+  const btnText = btnColor === 'red' ? 'blue' : 'red' 
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +22,12 @@ function App() {
         >
           Learn React
         </a>
+
+        <div>
+          <button style={{ backgroundColor: btnColor }} onClick={() => {
+            setBtnColor('blue');
+          }}>Change to {btnText}</button>
+        </div>
       </header>
     </div>
   );
