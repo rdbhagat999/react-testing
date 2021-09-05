@@ -49,3 +49,20 @@ test('button turns disbaled when checked', () => {
   expect(btnElement).toBeDisabled();
 
 });
+
+test('disabled button turns gray', () => {
+
+  render(<App />);
+  
+  const btnElement = screen.getByRole('button', { name: 'Change to blue' });
+  const checkboxElement = screen.getByRole('checkbox', { name: 'Disable button' });
+  
+  expect(checkboxElement).not.toBeChecked();
+
+  fireEvent.click(checkboxElement);
+
+  expect(checkboxElement).toBeChecked();
+  expect(btnElement).toBeDisabled();
+  expect(btnElement).toHaveStyle({ backgroundColor: 'gray' });
+
+});

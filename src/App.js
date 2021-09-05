@@ -40,11 +40,9 @@ function App() {
             />
           </label>
 
-          <button style={{ color: 'whitesmoke', backgroundColor: btnColor }}
+          <button style={{ color: 'whitesmoke', backgroundColor: isDisabled ? 'gray' : btnColor }}
             disabled={isDisabled}
-            onClick={() => {
-            setBtnColor('blue');
-            }}>Change to {btnText}
+            onClick={() => { setBtnColor('blue'); }}>Change to {btnText}
           </button>
           
         </div>
