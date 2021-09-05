@@ -1,17 +1,15 @@
-import { useState } from 'react'
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
-
-  const [btnColor, setBtnColor] = useState('red');
+  const [btnColor, setBtnColor] = useState("red");
   const [isDisabled, setIsDiabled] = useState(false);
-  const btnText = btnColor === 'red' ? 'blue' : 'red'
+  const btnText = btnColor === "red" ? "blue" : "red";
 
   return (
     <div className="App">
       <header className="App-header">
-
         <img src={logo} className="App-logo" alt="logo" />
 
         <p>
@@ -28,7 +26,6 @@ function App() {
         </a>
 
         <div>
-
           <label htmlFor="toggle-button">
             Disable button
             <input
@@ -40,11 +37,18 @@ function App() {
             />
           </label>
 
-          <button style={{ color: 'whitesmoke', backgroundColor: isDisabled ? 'gray' : btnColor }}
+          <button
+            style={{
+              color: "whitesmoke",
+              backgroundColor: isDisabled ? "gray" : btnColor,
+            }}
             disabled={isDisabled}
-            onClick={() => { setBtnColor('blue'); }}>Change to {btnText}
+            onClick={() => {
+              setBtnColor("blue");
+            }}
+          >
+            Change to {btnText}
           </button>
-          
         </div>
       </header>
     </div>
